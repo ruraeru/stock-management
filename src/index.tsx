@@ -4,13 +4,24 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './color.scss';
+import { RecoilRoot } from 'recoil';
+import { RouterProvider } from 'react-router-dom';
+import router from 'Router';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
-    <App />
+    <QueryClientProvider client={queryClient}>
+      <RecoilRoot>
+        <RouterProvider router={router} />
+      </RecoilRoot>
+    </QueryClientProvider>
   </React.StrictMode>
 );
 
