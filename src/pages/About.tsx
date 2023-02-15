@@ -1,13 +1,15 @@
 import { useEffect } from "react";
 import { useRecoilState, useRecoilValue } from "recoil"
-import { postList, postState } from "recoil/posts"
+import { testValue } from "recoil/posts";
 
 export default function About(): JSX.Element {
-    const { postValue } = useRecoilValue(postList);
+    const test = useRecoilValue(testValue);
     useEffect(() => {
-        console.log(postValue);
-    }, [postValue]);
+        console.log("About", test);
+    }, [test]);
     return (
-        <h1>About</h1>
+        <div>
+            <h1>About</h1>
+        </div>
     )
 }

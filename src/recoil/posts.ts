@@ -14,11 +14,7 @@ export const postState = atom<IPostTypes[]>({
   default: [],
 });
 
-export const postList = selector({
-  key: "postList",
-  get: ({ get }) => {
-    const postValue = get(postState);
-
-    return postValue;
-  },
+export const testValue = atom({
+  key: "test",
+  default: false,
 });
